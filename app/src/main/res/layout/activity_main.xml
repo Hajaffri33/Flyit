@@ -8,10 +8,12 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo"
+        android:layout_width="354dp"
+        android:layout_height="193dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo" />
+
+
 
 </RelativeLayout>
