@@ -5,4 +5,12 @@
     android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="600px"
+        android:layout_height="450px"
+        android:src="@drawable/logo"/>
+
+
+</RelativeLayout>
