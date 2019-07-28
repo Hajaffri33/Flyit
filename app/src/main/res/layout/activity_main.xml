@@ -12,7 +12,32 @@
         android:layout_height="193dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        android:id="@+id/logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bestscore"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="-49dp"
+        android:fontFamily="sans-serif"
+        android:text="20"
+        android:textColor="@color/colorAccent"
+        android:textSize="120dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bestscore"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-18dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Best Score"
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp" />
 
 
 
