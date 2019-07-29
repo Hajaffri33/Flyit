@@ -18,7 +18,15 @@
                     <solid android:color="@color/colorPrimaryDark" />
                 </shape>
             </item>
+
+            <item android:drawable="@drawable/circle_main_play">
+
+            </item>
+
         </layer-list>
     </item>
+
+
+
 
 </selector>
