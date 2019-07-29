@@ -6,15 +6,15 @@
             <item>
                 <shape android:shape="oval">
                    <solid android:color="#444444" />
-                    <size android:width="150dp"
-                        android:height="150dp"/>
+                    <size android:width="140dp"
+                        android:height="140dp"/>
                 </shape>
             </item>
 
             <item android:bottom="3.5dp">
                 <shape android:shape="oval">
-                    <size android:width="150dp"
-                        android:height="150dp"/>
+                    <size android:width="140dp"
+                        android:height="140dp"/>
                     <solid android:color="@color/colorPrimaryDark" />
                 </shape>
             </item>

@@ -8,37 +8,37 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="354dp"
-        android:layout_height="193dp"
+        android:id="@+id/logo"
+        android:layout_width="340dp"
+        android:layout_height="173dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/logo"
-        android:id="@+id/logo"/>
+        android:layout_marginTop="15dp"
+        android:src="@drawable/logo" />
 
     <TextView
+        android:id="@+id/bestscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bestscore"
         android:layout_below="@+id/logo"
-        android:layout_marginTop="-49dp"
+        android:layout_marginTop="-20dp"
         android:fontFamily="sans-serif"
+        android:layout_centerHorizontal="true"
         android:text="20"
         android:textColor="@color/colorAccent"
-        android:textSize="120dp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="100dp"
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/bestscore_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bestscore_text"
         android:layout_below="@+id/bestscore"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-18dp"
+        android:layout_marginTop="-17dp"
         android:fontFamily="sans-serif-condensed-medium"
+        android:layout_centerHorizontal="true"
         android:text="Best Score"
         android:textColor="@color/colorAccent"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/main_button"
@@ -46,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bestscore_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/circle_button_main"
-        />
+        android:layout_marginTop="23dp"
+        android:background="@drawable/circle_button_main" />
+
 
 
 </RelativeLayout>
