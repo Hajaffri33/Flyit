@@ -25,7 +25,7 @@
         android:text="20"
         android:textColor="@color/colorAccent"
         android:layout_centerHorizontal="true"
-        android:textSize="100dp"
+        android:textSize="120dp"
         android:textStyle="bold" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:text="Best Score"
         android:textColor="@color/colorAccent"
-        android:textSize="25dp" />
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/main_button"
@@ -49,6 +49,19 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/circle_button_main" />
 
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/main_button"
+        android:layout_marginTop="-10dp"
+        android:background="@color/colorAccent"
+        android:paddingTop="4dp"
+        android:text="PLAYER"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/button_stats"
         android:layout_width="60dp"
@@ -58,6 +71,8 @@
         android:layout_marginTop="58dp"
         android:width="50dp"
         android:height="50dp"
+        android:drawableStart="@drawable/stats_icon"
+        android:padding="6dp"
         android:background="@drawable/cirlce_button_secondary" />
 
     <Button
@@ -69,6 +84,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="126dp"
         android:layout_marginTop="60dp"
+        android:padding="6dp"
+        android:drawableStart="@drawable/share_icon"
         android:background="@drawable/cirlce_button_secondary" />
 
     <Button
@@ -78,6 +95,8 @@
         android:layout_below="@+id/main_button"
         android:layout_alignRight="@+id/button_stats"
         android:layout_marginTop="60dp"
+        android:padding="6dp"
+        android:drawableStart="@drawable/ads_icon"
         android:layout_marginRight="-250dp"
         android:background="@drawable/cirlce_button_secondary" />
 
