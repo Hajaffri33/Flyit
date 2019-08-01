@@ -12,10 +12,13 @@
                             <solid android:color="@color/colorPrimaryDark" />
                         </shape>
                     </item>
-                 <!--  <item android:drawable="@drawable/ads_icon"
-                          android:height="230px"
-                          android:width="230px"
-                          android:gravity="center"/>  -->
+               <item android:drawable="@drawable/ads_icon"
+                   android:height="50dp"
+                   android:width="50dp"
+                   android:gravity="center"
+
+                   />
+
                 </layer-list>
 
             </item>

@@ -13,8 +13,6 @@
                 </shape>
             </item>
             <item android:drawable="@drawable/stats_icon"
-                android:height="24dp"
-                android:width="24dp"
                 android:gravity="center"/>
         </layer-list>
 
