@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item>
+        <layer-list>
+            <item>
+
+                <shape android:shape="oval">
+                    <size android:width="100dp"
+                        android:height="100dp"/>
+                    <solid android:color="@color/colorPrimaryDark" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ads_icon"
+                android:height="35dp"
+                android:width="35dp"
+                android:gravity="center"
+                />
+
+        </layer-list>
+
+    </item>
+
+
+
+</selector>

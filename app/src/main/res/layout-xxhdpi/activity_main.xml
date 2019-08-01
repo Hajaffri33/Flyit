@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="340dp"
-        android:layout_height="173dp"
+        android:layout_width="354dp"
+        android:layout_height="179dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:src="@drawable/logo" />
@@ -20,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
+        android:layout_marginTop="-12dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
         android:fontFamily="sans-serif"
         android:text="0"
         android:textColor="@color/colorAccent"
@@ -44,8 +44,8 @@
         android:id="@+id/main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bestscore_text"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bestscore_text"
         android:layout_marginTop="31dp"
         android:background="@drawable/play_button" />
 
@@ -68,12 +68,10 @@
         android:layout_height="60dp"
         android:layout_below="@+id/main_button"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="57dp"
         android:width="50dp"
         android:height="50dp"
-        android:background="@drawable/ads_button"
-        android:drawableStart="@drawable/stats_icon"
-        android:padding="6dp" />
+        android:background="@drawable/stats_button" />
 
     <Button
         android:id="@+id/button_share"
@@ -84,9 +82,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="126dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/ads_button"
-        android:drawableStart="@drawable/share_icon"
-        android:padding="6dp" />
+        android:background="@drawable/share_button" />
 
     <Button
         android:id="@+id/button_ads"
@@ -95,10 +91,8 @@
         android:layout_below="@+id/main_button"
         android:layout_alignRight="@+id/button_stats"
         android:layout_marginTop="60dp"
-        android:layout_marginRight="-250dp"
-        android:background="@drawable/ads_button"
-        android:drawableStart="@drawable/ads_icon"
-        android:padding="6dp" />
+        android:layout_marginRight="-249dp"
+        android:background="@drawable/ads_button" />
 
 
 
