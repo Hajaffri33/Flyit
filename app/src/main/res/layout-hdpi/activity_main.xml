@@ -69,8 +69,11 @@
         android:layout_below="@+id/main_button"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="58dp"
-        android:background="@drawable/stats_button"
-     />
+        android:width="50dp"
+        android:height="50dp"
+        android:drawableStart="@drawable/stats_icon"
+        android:padding="6dp"
+        android:background="@drawable/ads_button" />
 
     <Button
         android:id="@+id/button_share"
@@ -81,8 +84,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="126dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/share_button"
-        />
+        android:padding="6dp"
+        android:drawableStart="@drawable/share_icon"
+        android:background="@drawable/ads_button" />
 
     <Button
         android:id="@+id/button_ads"
@@ -91,10 +95,10 @@
         android:layout_below="@+id/main_button"
         android:layout_alignRight="@+id/button_stats"
         android:layout_marginTop="60dp"
-        android:background="@drawable/ads_button"
-        android:layout_marginRight="-250dp"
+        android:padding="6dp"
         android:drawableStart="@drawable/ads_icon"
-         />
+        android:layout_marginRight="-250dp"
+        android:background="@drawable/ads_button" />
 
 
 

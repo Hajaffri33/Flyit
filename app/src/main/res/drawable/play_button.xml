@@ -19,7 +19,7 @@
                 </shape>
             </item>
 
-            <item android:drawable="@drawable/circle_main_play">
+            <item android:drawable="@drawable/play_icon">
 
             </item>
 
