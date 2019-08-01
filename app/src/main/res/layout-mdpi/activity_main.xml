@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="340dp"
-        android:layout_height="173dp"
+        android:layout_width="410dp"
+        android:layout_height="191dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:src="@drawable/logo" />
@@ -20,11 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="11dp"
         android:fontFamily="sans-serif"
+        android:layout_centerHorizontal="true"
         android:text="20"
         android:textColor="@color/colorAccent"
-        android:layout_centerHorizontal="true"
         android:textSize="120dp"
         android:textStyle="bold" />
 
@@ -33,11 +33,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bestscore"
-        android:layout_marginTop="-19dp"
+        android:layout_marginTop="-24dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_centerHorizontal="true"
         android:text="Best Score"
         android:textColor="@color/colorAccent"
+        android:layout_centerHorizontal="true"
         android:textSize="30dp" />
 
     <Button
@@ -45,8 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bestscore_text"
-        android:layout_marginTop="31dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
         android:background="@drawable/play_button" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_width="110dp"
         android:layout_height="35dp"
         android:layout_below="@+id/main_button"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="-5dp"
         android:background="@color/colorAccent"
         android:paddingTop="4dp"
         android:text="PLAYER"
@@ -67,22 +67,19 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_below="@+id/main_button"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="58dp"
-        android:background="@drawable/stats_button"
-        />
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="98dp"
+        android:background="@drawable/stats_button" />
 
     <Button
         android:id="@+id/button_share"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_below="@+id/main_button"
-        android:layout_alignLeft="@+id/button_stats"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="174dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/share_button"
-        />
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/share_button" />
 
     <Button
         android:id="@+id/button_ads"
@@ -90,10 +87,9 @@
         android:layout_height="60dp"
         android:layout_below="@+id/main_button"
         android:layout_alignRight="@+id/button_stats"
-        android:layout_marginTop="88dp"
-        android:layout_marginRight="-306dp"
-        android:background="@drawable/ads_button"
-        />
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="-261dp"
+        android:background="@drawable/ads_button" />
 
 
 
