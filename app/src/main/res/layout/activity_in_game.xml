@@ -25,6 +25,18 @@
         android:paddingRight="15dp"
         android:layout_alignParentRight="true"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/sparrow"
+        android:background="@drawable/image_boder"
+        android:padding="8dp"
+        />
+
+
+
 
 
 
