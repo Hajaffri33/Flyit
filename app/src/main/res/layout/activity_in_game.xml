@@ -16,6 +16,19 @@
         android:background="@android:color/transparent"
         android:src="@drawable/home_icon" />
 
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:fontFamily="sans-serif"
+        android:paddingTop="10dp"
+        android:text="10"
+        android:textColor="#FFF"
+        android:textSize="80dp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/pause_button"
         android:layout_width="80dp"
@@ -26,14 +39,72 @@
         android:layout_alignParentRight="true"/>
 
     <ImageView
+        android:id="@+id/image_viewer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/sparrow"
-        android:background="@drawable/image_boder"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/image_border"
         android:padding="8dp"
-        />
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sparrow" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:text='"Sparrow"'
+        android:layout_below="@+id/image_viewer"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"
+        android:progressTint="@color/colorPrimaryDark"
+        android:progress="80"
+        android:layout_marginTop="37dp"
+        android:max="100" />
+
+    <Button
+        android:id="@+id/cantfly"
+        android:layout_width="170dp"
+        android:layout_height="125dp"
+        android:layout_below="@+id/progress"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/cantfly_button"
+        android:text="Can't\n Fly"
+        android:textColor="#FFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/fly"
+        android:layout_width="170dp"
+        android:layout_height="125dp"
+        android:layout_below="@+id/progress"
+        android:layout_alignRight="@+id/cantfly"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/fly_button"
+        android:text="Fly"
+        android:textColor="#FFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+
 
 
 
