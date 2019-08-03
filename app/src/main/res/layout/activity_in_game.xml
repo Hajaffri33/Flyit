@@ -24,7 +24,6 @@
         android:layout_centerInParent="true"
         android:fontFamily="sans-serif"
         android:paddingTop="10dp"
-        android:text="10"
         android:textColor="#FFF"
         android:textSize="80dp"
         android:textStyle="bold" />
@@ -66,12 +65,11 @@
         android:layout_width="250dp"
         android:layout_height="20dp"
         android:layout_below="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/white"
-        android:progressTint="@color/colorPrimaryDark"
+        android:layout_marginTop="15dp"
+        android:max="100"
         android:progress="80"
-        android:layout_marginTop="37dp"
-        android:max="100" />
+        android:progressTint="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/cantfly"
