@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class in_game extends AppCompatActivity {
+public class in_game extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
     Button fly,cant_fly;
     ProgressBar pb;
@@ -20,17 +23,19 @@ public class in_game extends AppCompatActivity {
     private int best_score = 0;
     TextView score;
 
+    private GestureDetector gestureDetector;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_game);
 
-        prog();
-        fly = findViewById(R.id.fly);
-        cant_fly = findViewById(R.id.cantfly);
+        gestureDetector = new GestureDetector(this,this);
+
+        score = findViewById(R.id.score);
 
 
-        fly.setOnClickListener(new View.OnClickListener() {
+      /*fly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fly();
@@ -42,10 +47,65 @@ public class in_game extends AppCompatActivity {
             public void onClick(View view) {
                 cant_fly();
             }
-        });
+        }); */
     }
 
-   public void prog(){
+
+
+
+//  Gestures Started
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean onDown(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
+
+        if(e1.getY() - e2.getY() > 50){
+            score.setText("UP");
+            return true;
+        }
+
+        if(e2.getY() - e1.getY() > 50){
+            score.setText("DOWN");
+            return true;
+        }
+
+        return false;
+    }
+
+//    Gestures Ended
+
+
+
+  /* public void prog(){
 
         pb = (ProgressBar) findViewById(R.id.progress);
 
@@ -68,10 +128,6 @@ public class in_game extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
-    }
-
-
-
-
+    }*/
 
 }
