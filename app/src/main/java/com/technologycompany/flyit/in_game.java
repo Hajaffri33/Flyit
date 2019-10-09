@@ -17,7 +17,6 @@ import java.util.TimerTask;
 
 public class in_game extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
-    Button fly,cant_fly;
     ProgressBar pb;
     int counter = 0;
     private int best_score = 0;
