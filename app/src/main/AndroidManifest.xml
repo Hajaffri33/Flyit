@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.technologycompany.flyit">
+    package="com.technologycompany.flyornot">
 
     <supports-screens
         android:largeScreens="true"
@@ -10,11 +10,11 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="Flyornot"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".in_game"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.technologycompany.flyornot.in_game"></activity>
+        <activity android:name="com.technologycompany.flyornot.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

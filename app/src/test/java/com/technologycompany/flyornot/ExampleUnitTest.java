@@ -1,4 +1,4 @@
-package com.technologycompany.flyit;
+package com.technologycompany.flyornot;
 
 import org.junit.Test;
 
