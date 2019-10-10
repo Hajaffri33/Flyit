@@ -45,7 +45,7 @@
         android:background="@drawable/image_border"
         android:padding="8dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/sparrow" />
+         />
 
     <TextView
         android:id="@+id/name"
