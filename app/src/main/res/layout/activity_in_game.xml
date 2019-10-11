@@ -54,7 +54,6 @@
         android:textColor="#000"
         android:textSize="30dp"
         android:textStyle="normal"
-        android:text='"Sparrow"'
         android:layout_below="@+id/image_viewer"
         android:layout_centerHorizontal="true"
         android:paddingTop="10dp"/>

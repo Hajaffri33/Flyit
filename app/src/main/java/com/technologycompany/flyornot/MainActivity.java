@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public void goto_in_game(){
         Intent intent = new Intent(this, in_game.class);
         startActivity(intent);
+        finish();
     }
 
 }
