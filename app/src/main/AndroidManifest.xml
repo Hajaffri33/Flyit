@@ -13,8 +13,10 @@
         android:label="Flyornot"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name="com.technologycompany.flyornot.in_game"></activity>
-        <activity android:name="com.technologycompany.flyornot.MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".game_end" />
+        <activity android:name=".in_game" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -98,8 +99,10 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
                 return true;
             }
            else if(fly.equals("no")){
-
-                Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+               save();
+               Intent intent = new Intent(in_game.this,game_end.class);
+               startActivity(intent);
+               finish();
                 return true;
            }
         }
@@ -112,7 +115,10 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
             }
             else if(fly.equals("yes")){
 
-                Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+                save();
+                Intent intent = new Intent(in_game.this,game_end.class);
+                startActivity(intent);
+                finish();
                 return true;
             }
         }
@@ -138,7 +144,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     public imageHandler getData(){
 
         imageHandler imgHndlr = new imageHandler();
-        int storeRandom = random.nextInt(5);
+        int storeRandom = random.nextInt(10);
         imgHndlr.setName(images.get(storeRandom).getName());
         imgHndlr.setFly(images.get(storeRandom).getFly());
         imgHndlr.setUrl(images.get(storeRandom).getUrl());
@@ -149,7 +155,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
     public void getImages(){
 
-        images.add(new imageHandler("sparrow", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_aeroplane)));
+        images.add(new imageHandler("sparrow", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_sparrow)));
 
         images.add(new imageHandler("crow", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_crow)));
 
@@ -159,9 +165,29 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
         images.add(new imageHandler("aeroplane", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_aeroplane)));
 
+        images.add(new imageHandler("roses", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_roses)));
+
+        images.add(new imageHandler("batman", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_batman)));
+
+        images.add(new imageHandler("bee", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_bee)));
+
+        images.add(new imageHandler("dog", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_dog)));
+
+        images.add(new imageHandler("pen", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_pen)));
+
     }
 
-// ----------------------------------------<> Check Data <>-----------------------------------------
+// ----------------------------------------<> Saving Score <>---------------------------------------
+
+    public void save(){
+        String score = String.valueOf(counter);
+        SharedPreferences sharedPref = getSharedPreferences("MyData",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("score",score);
+        editor.apply();
+        editor.commit();
+
+    }
 
 
 

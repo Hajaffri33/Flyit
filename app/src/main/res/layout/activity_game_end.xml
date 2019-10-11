@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/lightPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".game_end">
+
+    <ImageView
+        android:id="@+id/home_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="15dp"
+        android:background="@android:color/transparent"
+        android:onClick="home"
+        android:src="@drawable/home_icon" />
+
+    <TextView
+        android:id="@+id/the_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="150dp"
+        android:text="15"
+        android:textColor="#464a4d"
+        android:textSize="150dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/again"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/bestscore_text"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="42dp"
+        android:text="Try Again?"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textAllCaps="false"
+        android:background="@drawable/try_again_button" />
+
+
+
+
+</RelativeLayout>
