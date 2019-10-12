@@ -36,8 +36,8 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     TextView score,textName;                                 //for displaying entities
     ImageView imageView;
     ProgressBar progressBar;
-    CountDownTimer countDownTimer;
-    int time, interval, progress = 0;
+    CountDownTimer countDownTimer, countDownTimer2;
+    int progress = 0;
     int counter = 0;                             // for score purposes
     private GestureDetector gestureDetector;                 // for gestures
 
@@ -60,12 +60,12 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
 //                        ---------------<> Countdown Timer <>--------------
 
-        countDownTimer = new CountDownTimer(3000, 10) {
+        countDownTimer = new CountDownTimer(2000, 10) {
             @Override
             public void onTick(long l) {
 
                 progress++;
-                progressBar.setProgress((int)progress*100/(3000/10));
+                progressBar.setProgress((int)progress*100/(2000/10));
             }
 
             @Override
@@ -77,10 +77,11 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
             }
         };
-
         countDownTimer.start();
 
 //                        ---------------<> Countdown End <>--------------
+
+
 
     } // onCreate end
 
@@ -122,7 +123,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
         if(e1.getY() - e2.getY() > 50){    // for up
 
-           if(fly.equals("yes")){
+            if(fly.equals("yes")){
 
                 counter = counter + 1;
                 countDownTimer.cancel();
@@ -130,15 +131,15 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
                 countDownTimer.start();
                 return true;
             }
-           else if(fly.equals("no")){
+            else if(fly.equals("no")){
 
-               countDownTimer.cancel();
-               save();
-               Intent intent = new Intent(in_game.this,game_end.class);
-               startActivity(intent);
-               finish();
-               return true;
-           }
+                countDownTimer.cancel();
+                save();
+                Intent intent = new Intent(in_game.this,game_end.class);
+                startActivity(intent);
+                finish();
+                return true;
+            }
         }
         if(e2.getY() - e1.getY() > 50){  // for down
 
@@ -165,6 +166,21 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
     } //    Gestures Ended
 
+// -----------------------------------<> Start/Stop counter <>--------------------------------------
+
+    public void start(){
+        if (counter <= 5) countDownTimer.start();
+        else countDownTimer2.start();
+
+    }
+
+    public void stop(){
+        if (counter <= 5) countDownTimer.cancel();
+        else countDownTimer2.cancel();
+
+
+    }
+
 // ----------------------------------------<> Show Data <>------------------------------------------
 
     public void showData(imageHandler imageHandler){
@@ -183,7 +199,10 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     public imageHandler getData(){
 
         imageHandler imgHndlr = new imageHandler();
-        int storeRandom = random.nextInt(10);
+        for(int i=0; i<=10; i++){
+            Collections.shuffle(images);
+        }
+        int storeRandom = random.nextInt(60);
         imgHndlr.setName(images.get(storeRandom).getName());
         imgHndlr.setFly(images.get(storeRandom).getFly());
         imgHndlr.setUrl(images.get(storeRandom).getUrl());
@@ -194,25 +213,125 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
     public void getImages(){
 
-        images.add(new imageHandler("sparrow", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_sparrow)));
+        images.add(new imageHandler("Sparrow", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_sparrow)));
 
-        images.add(new imageHandler("crow", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_crow)));
+        images.add(new imageHandler("Crow", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_crow)));
 
-        images.add(new imageHandler("tiger", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_tiger)));
+        images.add(new imageHandler("Tiger", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_tiger)));
 
-        images.add(new imageHandler("cow", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_cow)));
+        images.add(new imageHandler("Cow", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_cow)));
 
-        images.add(new imageHandler("aeroplane", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_aeroplane)));
+        images.add(new imageHandler("Aeroplane", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_aeroplane)));
 
-        images.add(new imageHandler("roses", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_roses)));
+        images.add(new imageHandler("Roses", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_roses)));
 
-        images.add(new imageHandler("batman", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_batman)));
+        images.add(new imageHandler("Batman", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_batman)));
 
-        images.add(new imageHandler("bee", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_bee)));
+        images.add(new imageHandler("Bee", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_bee)));
 
-        images.add(new imageHandler("dog", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_dog)));
+        images.add(new imageHandler("Dog", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_dog)));
 
-        images.add(new imageHandler("pen", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_pen)));
+        images.add(new imageHandler("Pen", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_pen)));
+
+        images.add(new imageHandler("Alien", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_alien)));
+
+        images.add(new imageHandler("Booger", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_booger)));
+
+        images.add(new imageHandler("Cloud", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_cloud)));
+
+        images.add(new imageHandler("Donald Trump", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_donaltrump)));
+
+        images.add(new imageHandler("Drone", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_drone)));
+
+        images.add(new imageHandler("Elon Musk", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_elonmusk)));
+
+        images.add(new imageHandler("Football", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_football)));
+
+        images.add(new imageHandler("Gal Gadot", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_galgodat)));
+
+        images.add(new imageHandler("Hair", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_hair)));
+
+        images.add(new imageHandler("Hen", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_hen)));
+
+        images.add(new imageHandler("Irfan Junejo", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_irfanjunejo)));
+
+        images.add(new imageHandler("Ironman", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_ironman)));
+
+        images.add(new imageHandler("Jack Sparrow", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_jacksparrow)));
+
+        images.add(new imageHandler("Leonal Messi", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_leonalmessi)));
+
+        images.add(new imageHandler("Logan Paul", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_loganpaul)));
+
+        images.add(new imageHandler("Mobula", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_mobula)));
+
+        images.add(new imageHandler("Mosquito", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_mosquito)));
+
+        images.add(new imageHandler("PK", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_pk)));
+
+        images.add(new imageHandler("Peacock", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_peacock)));
+
+        images.add(new imageHandler("Penguin", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_penguin)));
+
+        images.add(new imageHandler("Piece of Coth", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_pieceofcloth)));
+
+        images.add(new imageHandler("Poop", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_poop)));
+
+        images.add(new imageHandler("Raza Samo", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_razasamo)));
+
+        images.add(new imageHandler("Robert Downey Jr", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_robertdowneyjr)));
+
+        images.add(new imageHandler("Rocket", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_rocket)));
+
+        images.add(new imageHandler("Ronaldo", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_ronaldo)));
+
+        images.add(new imageHandler("Saad ur Rehman", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_saadrehman)));
+
+        images.add(new imageHandler("Salman Khan", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_salmankhan)));
+
+        images.add(new imageHandler("Shahrukh Khan", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_shahrukhkhan)));
+
+        images.add(new imageHandler("Sham Idrees", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_shamidrees)));
+
+        images.add(new imageHandler("Sky Diver", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_skydiver)));
+
+        images.add(new imageHandler("Smoke", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_smoke)));
+
+        images.add(new imageHandler("Snoop Dogg", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_snoopdog)));
+
+        images.add(new imageHandler("Tom and Jerry", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_tom)));
+
+        images.add(new imageHandler("Wonder Women", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_wonderwomen)));
+
+        images.add(new imageHandler("Apple", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_apple)));
+
+        images.add(new imageHandler("Balloons", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_balloons)));
+
+        images.add(new imageHandler("Condor", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_condor)));
+
+        images.add(new imageHandler("Ducky Bhai", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_duckybhai)));
+
+        images.add(new imageHandler("Helicopter", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_helicopter)));
+
+        images.add(new imageHandler("Light", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_light)));
+
+        images.add(new imageHandler("Music Dog", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_musicdog)));
+
+        images.add(new imageHandler("Smell", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_smell)));
+
+        images.add(new imageHandler("Soda", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_soda)));
+
+        images.add(new imageHandler("Space Craft", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_spacecraft)));
+
+        images.add(new imageHandler("Spiderman", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_spiderman)));
+
+        images.add(new imageHandler("Stone", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_stone)));
+
+        images.add(new imageHandler("Water", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_water)));
+
+        images.add(new imageHandler("Weed", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_weed)));
+
+        images.add(new imageHandler("Windows", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_windows)));
 
     }
 
