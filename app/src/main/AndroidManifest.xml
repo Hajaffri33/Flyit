@@ -12,7 +12,8 @@
         android:allowBackup="true"
         android:label="Flyornot"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+        android:icon="@mipmap/icon">
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".game_end" />
         <activity android:name=".in_game" />

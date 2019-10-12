@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ImageView;
@@ -34,6 +35,9 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     Random random = new Random();
     TextView score,textName;                                 //for displaying entities
     ImageView imageView;
+    ProgressBar progressBar;
+    CountDownTimer countDownTimer;
+    int time, interval, progress = 0;
     int counter = 0;                             // for score purposes
     private GestureDetector gestureDetector;                 // for gestures
 
@@ -48,10 +52,35 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
         score = findViewById(R.id.score);
         textName  = findViewById(R.id.name);
         imageView = findViewById(R.id.image_viewer);
+        progressBar = findViewById(R.id.progress);
 
         getImages();
         imageHandler imageHandler = getData();
         showData(imageHandler);
+
+//                        ---------------<> Countdown Timer <>--------------
+
+        countDownTimer = new CountDownTimer(3000, 10) {
+            @Override
+            public void onTick(long l) {
+
+                progress++;
+                progressBar.setProgress((int)progress*100/(3000/10));
+            }
+
+            @Override
+            public void onFinish() {
+                save();
+                Intent intent = new Intent(in_game.this, game_end.class);
+                startActivity(intent);
+                finish();
+
+            }
+        };
+
+        countDownTimer.start();
+
+//                        ---------------<> Countdown End <>--------------
 
     } // onCreate end
 
@@ -94,27 +123,36 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
         if(e1.getY() - e2.getY() > 50){    // for up
 
            if(fly.equals("yes")){
+
                 counter = counter + 1;
+                countDownTimer.cancel();
                 showData(getData());
+                countDownTimer.start();
                 return true;
             }
            else if(fly.equals("no")){
+
+               countDownTimer.cancel();
                save();
                Intent intent = new Intent(in_game.this,game_end.class);
                startActivity(intent);
                finish();
-                return true;
+               return true;
            }
         }
         if(e2.getY() - e1.getY() > 50){  // for down
 
             if(fly.equals("no")){
+
                 counter = counter + 1;
+                countDownTimer.cancel();
                 showData(getData());
+                countDownTimer.start();
                 return true;
             }
             else if(fly.equals("yes")){
 
+                countDownTimer.cancel();
                 save();
                 Intent intent = new Intent(in_game.this,game_end.class);
                 startActivity(intent);
@@ -132,6 +170,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     public void showData(imageHandler imageHandler){
 
         imgh = imageHandler;
+        progress = 0;
         score.setText(String.valueOf(counter));
         imageView.setImageDrawable(imageHandler.getUrl());
         textName.setText(imageHandler.getName());
@@ -188,6 +227,8 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
         editor.commit();
 
     }
+
+
 
 
 
