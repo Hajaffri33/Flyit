@@ -45,9 +45,9 @@ public class game_end extends AppCompatActivity {
     public void load() {
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
-        String score = sharedPreferences.getString("score", "no_name_defined");
+        int score = sharedPreferences.getInt("score", 0);
 
-        theScore.setText(score);
+        theScore.setText(String.valueOf(score));
 
     }
 

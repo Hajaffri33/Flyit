@@ -23,7 +23,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-13dp"
         android:fontFamily="sans-serif"
-        android:text="0"
         android:textColor="@color/colorAccent"
         android:textSize="100dp"
         android:textStyle="bold" />

@@ -10,11 +10,12 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/icon"
         android:label="Flyornot"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-        android:icon="@mipmap/icon">
-        <activity android:name=".MainActivity"></activity>
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+        <activity android:name=".swipe"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".game_end" />
         <activity android:name=".in_game" />
         <activity android:name=".Splash">

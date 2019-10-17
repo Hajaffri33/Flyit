@@ -70,6 +70,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
             @Override
             public void onFinish() {
+                saveHighScore();
                 save();
                 Intent intent = new Intent(in_game.this, game_end.class);
                 startActivity(intent);
@@ -119,7 +120,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
 
         imageHandler imageHandler = imgh;
-        String fly = imageHandler.getFly();
+        String fly = imageHandler.getFly();;
 
         if(e1.getY() - e2.getY() > 50){    // for up
 
@@ -134,6 +135,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
             else if(fly.equals("no")){
 
                 countDownTimer.cancel();
+                saveHighScore();
                 save();
                 Intent intent = new Intent(in_game.this,game_end.class);
                 startActivity(intent);
@@ -154,6 +156,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
             else if(fly.equals("yes")){
 
                 countDownTimer.cancel();
+                saveHighScore();
                 save();
                 Intent intent = new Intent(in_game.this,game_end.class);
                 startActivity(intent);
@@ -209,6 +212,37 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
         return imgHndlr;
     }
 
+// ----------------------------------------<> Saving Score <>---------------------------------------
+
+    public void save(){
+        int score = counter;
+        SharedPreferences sharedPref = getSharedPreferences("MyData",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("score",score);
+        editor.apply();
+
+    }
+
+// ----------------------------------------<> Saving Score <>---------------------------------------
+
+    public void saveHighScore(){
+
+        int highscore;
+        SharedPreferences sharedPref = getSharedPreferences("GameHighScore",MODE_PRIVATE);
+        highscore = sharedPref.getInt("score", 0);
+
+        if(highscore<counter){
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("score",counter);
+            editor.apply();
+        }
+
+    }
+
+
+
+
+
 // --------------------------------------<> Getting Images <>---------------------------------------
 
     public void getImages(){
@@ -233,7 +267,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
         images.add(new imageHandler("Pen", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_pen)));
 
-        images.add(new imageHandler("Alien", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_alien)));
+        images.add(new imageHandler("Alien", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_alien)));
 
         images.add(new imageHandler("Booger", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_booger)));
 
@@ -263,7 +297,7 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
         images.add(new imageHandler("Logan Paul", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_loganpaul)));
 
-        images.add(new imageHandler("Mobula", "yes", getApplicationContext().getResources().getDrawable(R.drawable.img_mobula)));
+        images.add(new imageHandler("Mobula", "no", getApplicationContext().getResources().getDrawable(R.drawable.img_mobula)));
 
         images.add(new imageHandler("Mosquito", "yes",  getApplicationContext().getResources().getDrawable(R.drawable.img_mosquito)));
 
@@ -334,19 +368,6 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
         images.add(new imageHandler("Windows", "no",  getApplicationContext().getResources().getDrawable(R.drawable.img_windows)));
 
     }
-
-// ----------------------------------------<> Saving Score <>---------------------------------------
-
-    public void save(){
-        String score = String.valueOf(counter);
-        SharedPreferences sharedPref = getSharedPreferences("MyData",MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("score",score);
-        editor.apply();
-        editor.commit();
-
-    }
-
 
 
 
