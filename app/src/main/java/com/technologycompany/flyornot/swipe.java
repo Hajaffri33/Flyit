@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.TextView;
 
 public class swipe extends AppCompatActivity implements GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
@@ -20,7 +22,22 @@ public class swipe extends AppCompatActivity implements GestureDetector.OnGestur
 
         touch_to_continue = findViewById(R.id.touch);
         gestureDetector = new GestureDetector(this,this);
+        startAnimation();
 
+
+
+
+
+    }
+
+    public void startAnimation(){
+
+        Animation animation = new AlphaAnimation(0.1f , 1.0f);
+        animation.setDuration(1000);
+        animation.setStartOffset(0);
+        animation.setRepeatCount(Animation.INFINITE);
+        animation.setRepeatMode(Animation.REVERSE);
+        touch_to_continue.startAnimation(animation);
 
     }
 

@@ -2,6 +2,7 @@ package com.technologycompany.flyornot;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,12 +35,14 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
     ArrayList<imageHandler> images = new ArrayList<>();
     imageHandler imgh;
     Random random = new Random();
-    TextView score,textName;                                 //for displaying entities
+    TextView score,textName, count;                                 //for displaying entities
     ImageView imageView;
     ProgressBar progressBar;
-    CountDownTimer countDownTimer, countDownTimer2;
+    CountDownTimer countDownTimer, counterStart;
+    public View viewMain, viewSec;
     int progress = 0;
     int counter = 0;                             // for score purposes
+    int variable=4;
     private GestureDetector gestureDetector;                 // for gestures
 
 // -----------------------------------<> onCreate function <>---------------------------------------
@@ -51,36 +55,66 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
         gestureDetector = new GestureDetector(this,this);
         score = findViewById(R.id.score);
         textName  = findViewById(R.id.name);
+        count     = findViewById(R.id.countdown);
         imageView = findViewById(R.id.image_viewer);
         progressBar = findViewById(R.id.progress);
+        viewMain = findViewById(R.id.viewGroupMain);
+        viewSec  = findViewById(R.id.viewGroupSec);
 
-        getImages();
-        imageHandler imageHandler = getData();
-        showData(imageHandler);
+        viewMain.setVisibility(View.GONE);
+        viewSec.setVisibility(View.VISIBLE);
 
-//                        ---------------<> Countdown Timer <>--------------
-
-        countDownTimer = new CountDownTimer(2000, 10) {
+        counterStart = new CountDownTimer(3800,1000) {
             @Override
             public void onTick(long l) {
 
-                progress++;
-                progressBar.setProgress((int)progress*100/(2000/10));
+                variable--;
+                if(variable >= 1 )
+                {count.setText(String.valueOf(variable));}
+                if(variable == 0)
+                {count.setText("GO!");}
             }
 
             @Override
             public void onFinish() {
-                saveHighScore();
-                save();
-                Intent intent = new Intent(in_game.this, game_end.class);
-                startActivity(intent);
-                finish();
 
-            }
-        };
-        countDownTimer.start();
+                viewMain.setVisibility(View.VISIBLE);
+                viewSec.setVisibility(View.GONE);
+
+                getImages();
+                imageHandler imageHandler = getData();
+                showData(imageHandler);
+
+ //                        ---------------<> Countdown Timer <>--------------
+
+                countDownTimer = new CountDownTimer(2000, 10) {
+                    @Override
+                    public void onTick(long l) {
+
+                        progress++;
+                        progressBar.setProgress((int)progress*100/(2000/10));
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        saveHighScore();
+                        save();
+                        Intent intent = new Intent(in_game.this, game_end.class);
+                        startActivity(intent);
+                        finish();
+
+                    }
+                };
+                countDownTimer.start();
 
 //                        ---------------<> Countdown End <>--------------
+
+            }
+        }.start();
+
+
+
+
 
 
 
@@ -169,20 +203,6 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
     } //    Gestures Ended
 
-// -----------------------------------<> Start/Stop counter <>--------------------------------------
-
-    public void start(){
-        if (counter <= 5) countDownTimer.start();
-        else countDownTimer2.start();
-
-    }
-
-    public void stop(){
-        if (counter <= 5) countDownTimer.cancel();
-        else countDownTimer2.cancel();
-
-
-    }
 
 // ----------------------------------------<> Show Data <>------------------------------------------
 

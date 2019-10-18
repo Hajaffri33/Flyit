@@ -7,70 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".in_game">
 
-    <ImageView
-        android:id="@+id/home_button"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:paddingTop="15dp"
-        android:paddingLeft="15dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/home_icon" />
+    <RelativeLayout
+        android:id="@+id/viewGroupMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:fontFamily="sans-serif"
-        android:paddingTop="10dp"
-        android:textColor="#FFF"
-        android:textSize="80dp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/home_button"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@android:color/transparent"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/home_icon" />
 
-    <ImageView
-        android:id="@+id/pause_button"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/pause_icon"
-        android:paddingTop="15dp"
-        android:paddingRight="15dp"
-        android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif"
+            android:paddingTop="10dp"
+            android:textColor="#FFF"
+            android:textSize="80dp"
+            android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/image_viewer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:background="@drawable/image_border"
+        <ImageView
+            android:id="@+id/pause_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:src="@drawable/pause_icon" />
 
-        android:padding="8dp"
+        <ImageView
+            android:id="@+id/image_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="140dp"
+
+            android:background="@drawable/image_border"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_viewer"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="10dp"
+            android:text="name"
+            android:textColor="#000"
+            android:textSize="40dp"
+            android:textStyle="normal" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="250dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress_bar" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-         />
+        android:id="@+id/viewGroupSec"
+        android:layout_marginTop="150dp">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="40dp"
-        android:text="name"
-        android:textStyle="normal"
-        android:layout_below="@+id/image_viewer"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wave 1"
+            android:textSize="30dp"
+            android:textStyle="normal"
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            android:textColor="@color/colorAccent"/>
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:progressDrawable="@drawable/progress_bar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="250dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/name"
-        android:layout_marginTop="25dp"
-        android:max="100"
-        android:progress="0"
-        android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/countdown"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="200dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="2"/>
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
+
+
