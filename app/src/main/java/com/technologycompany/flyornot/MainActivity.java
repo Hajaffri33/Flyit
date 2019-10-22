@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public void goto_in_game(){
         Intent intent = new Intent(this, swipe.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.zoom_in, R.anim.fade_in);
         finish();
     }
 

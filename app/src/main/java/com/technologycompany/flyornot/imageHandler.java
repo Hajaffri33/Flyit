@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 
 public class imageHandler {
 
+    private int id;
     private String name;
     private String fly;
     private Drawable url;
@@ -12,12 +13,15 @@ public class imageHandler {
 
     }
 
-    public imageHandler(String name, String fly, Drawable url) {
+    public imageHandler(int id, String name, String fly, Drawable url) {
 
+        this.id = id;
         this.name = name;
         this.fly = fly;
         this.url= url;
     }
+
+    public int getId() {return id;}
 
     public String getName() {
         return name;
@@ -30,6 +34,8 @@ public class imageHandler {
     public Drawable getUrl() {
         return url;
     }
+
+    public void setId(int id) {this.id = id;}
 
     public void setName(String name) {
         this.name = name;
