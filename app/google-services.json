@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "865903950769",
+    "firebase_url": "https://flyornot-3c7fa.firebaseio.com",
+    "project_id": "flyornot-3c7fa",
+    "storage_bucket": "flyornot-3c7fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865903950769:android:71868b3f90cefa186a9b90",
+        "android_client_info": {
+          "package_name": "com.technologycompany.flyornot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865903950769-rnbmtri8ss3u06me31476fepm1j3a4k7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.technologycompany.flyornot",
+            "certificate_hash": "3b1429af0fa5dc10a543fab860e3d54728b7d95e"
+          }
+        },
+        {
+          "client_id": "865903950769-tc2cmk8g84fnp90k8b9o1ssb8qr9fo2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN8fYEDi_FJhAc4zah4whh7Lx1rvkeoFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865903950769-tc2cmk8g84fnp90k8b9o1ssb8qr9fo2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

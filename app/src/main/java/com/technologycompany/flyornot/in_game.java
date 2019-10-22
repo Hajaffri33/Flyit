@@ -109,11 +109,11 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
 //                        ---------------<> Countdown 2 Start <>--------------
 
-                countDownTimer2 = new CountDownTimer(2000, 150) {
+                countDownTimer2 = new CountDownTimer(2000, 170) {
                     @Override
                     public void onTick(long l) {
 
-                        progressBar.setProgress((int)progress*100/(2000/150));
+                        progressBar.setProgress((int)progress*100/(2000/170));
                         progress++;
                     }
 
@@ -133,11 +133,11 @@ public class in_game extends AppCompatActivity implements GestureDetector.OnGest
 
 //                        ---------------<> Countdown 3 Start <>--------------
 
-                countDownTimer3 = new CountDownTimer(1000, 100) {
+                countDownTimer3 = new CountDownTimer(1000, 150) {
                     @Override
                     public void onTick(long l) {
 
-                        progressBar.setProgress((int)progress*100/(1000/100));
+                        progressBar.setProgress((int)progress*100/(1000/150));
                         progress++;
                     }
 
